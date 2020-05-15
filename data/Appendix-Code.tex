@@ -1,0 +1,116 @@
+\chapter{相关代码}
+\label{cha:Code}
+
+\section{平均值分布式算法收敛性检测}
+\label{sec:Consensus}
+% minted需要latexmk 加入 --shell-escape 参数，即 $ latexmk -xelatex --shell-escape main.tex
+% \usepackage[cache=false]{minted}  % 代码高亮
+
+% 如果出现一堆 Undefined control sequence.  那应该是没加 [cache=false]
+
+% Package minted Error: You must have `pygmentize' installed to use this packag
+% Solution:应该是Python的包Pygments的问题了，用pip安装了这个包
+%    pip install pygments
+
+% Windows 10 1903下Python命令关联到了Microsoft Store里面，如果没安装python：
+% 去 https://www.python.org/downloads/ 下载下来 直接默认路径+添加到PATH即可
+
+% 你可以通过以下命令来判断是否已安装pip：
+% pip --version
+% 下载pip：https://pypi.python.org/pypi/pip#downloads
+% 之后 python setup.py install 安装
+% 搜索 环境变量 
+% 把C:\Users\ZTL\AppData\Local\Programs\Python\Python37-32\Scripts 加到Path里
+
+% 必要时注意重启VS Code以更新环境变量
+
+
+% \begin{minted}{c++}
+%     int main() {
+%         printf("hello, world");
+%         return 0;
+%     }
+% \end{minted}
+
+
+% Using different styles
+% The full syntax is \usemintedstyle[hlanguagei]{hstylei}
+% To get a list of all available stylesheets, see the online demo at the Pygments website or execute the following command on the command line:
+% $ pygmentize -L styles
+
+% Supported languages
+% Pygments supports over 300 different programming languages, template languages, and other markup languages. To see an exhaustive list of the currently supported languages, use the command
+% $ pygmentize -L lexers
+
+% Finally, there’s the \inputminted command to read and format whole files. Its syntax is \inputminted[hoptionsi]{hlanguagei}{hfilenamei}.
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/Consensus.py}
+% mathescape  在注释中显示Latex格式的公式
+% linenos  显示行号
+% breaklines  自动换行
+
+
+\section{Jupyter Lab UI 界面}
+\label{sec:JupyterLabUI-Code}
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/UI.py}
+
+\section{XBee发送数据}
+
+\subsection{NetworkModificationsSample}
+\label{sec:NetworkModificationsSample}
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/NetworkModificationsSample/NetworkModificationsSample.py}
+
+\subsection{SendDataSample}
+\label{sec:SendDataSample}
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/SendDataSample/SendDataSample.py}
+
+\subsection{SendDataAsyncSample}
+\label{sec:SendDataAsyncSample}
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/SendDataAsyncSample/SendDataAsyncSample.py}
+
+\subsection{SendBroadcastDataSample}
+\label{sec:SendBroadcastDataSample}
+\inputminted[mathescape, linenos, breaklines]{python3}{Code/SendBroadcastDataSample/SendBroadcastDataSample.py}
+
+\section{实物可视化界面DEMO源码}
+\label{sec:MisakaCarV1}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/MisakaCarV1/MisakaCarV1.ino}
+
+% 以下为非必须
+
+\section{DRV8825驱动微型步进电机加速及定距移动测试}
+
+\subsection{3步进电机加速测试}
+\label{sec:Stepper-3}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/Stepper-3/Stepper-3.ino}
+
+\subsection{坐标变换及运动函数封装}
+\label{sec:Stepper-3-v2}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/Stepper-3-v2/Stepper-3-v2.ino}
+
+
+\section{TB6612FNG}
+\label{sec:TB6612FNG-Functionality-Test}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/TB6612FNG-Functionality-Test/TB6612FNG-Functionality-Test.ino}
+
+\section{Arduino as ISP}
+\label{sec:ArduinoISP}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/ArduinoISP/ArduinoISP.ino}
+
+\section{WS2812B}
+\label{sec:WS2812B-Functionality-Test}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/WS2812B-Functionality-Test/WS2812B-Functionality-Test.ino}
+
+
+\section{XBee通信 RX and TX}
+
+\subsection{接收Frame数据包}
+\label{sec:Series2_Rx}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/Series2_Rx/Series2_Rx.ino}
+
+\subsection{接收Frame数据包并通过软件串口发送}
+\label{sec:Series2_Rx_Nss}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/Series2_Rx_Nss/Series2_Rx_Nss.ino}
+
+\subsection{发送Frame数据包}
+\label{sec:Series2_Tx}
+\inputminted[mathescape, linenos, breaklines]{c}{Code/Series2_Tx/Series2_Tx.ino}
